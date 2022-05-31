@@ -55,7 +55,7 @@ class model_build():
         model.add(tf.keras.layers.Dropout(0.2, name='drop2'))
         model.add(tf.keras.layers.LSTM(128, return_sequences=False, name='lstm3'))
         model.add(tf.keras.layers.Dropout(0.2, name='drop3'))
-        model.add(tf.keras.layers.Dense(self.output_dim, activation=tf.keras.activations.sigmoid, name='dense1'))
+        model.add(tf.keras.layers.Dense(self.output_dim, activation=tf.keras.activations.softmax, name='dense1'))
 
         model.compile(optimizer=tf.keras.optimizers.Adam(),
                       loss=tf.keras.losses.CategoricalCrossentropy(),
